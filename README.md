@@ -1,69 +1,120 @@
-# React + TypeScript + Vite
+# TaskManager Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern frontend application for a Task Manager system, built with **React**, **TypeScript** and **Vite**, consuming a REST API with **JWT-based authentication**.
 
-Currently, two official plugins are available:
+This project is part of a fullstack application, where the frontend and backend are maintained as independent repositories.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ⚛️ React
+- 🟦 TypeScript
+- ⚡ Vite
+- 🌐 Axios
+- 🔐 JWT Authentication
+- 🧭 React Router
+- 🎨 Bootstrap (styles)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## ✨ Features
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- User authentication (login/logout)
+- JWT token handling using localStorage
+- Axios interceptor for authenticated requests
+- Protected routes (only accessible when authenticated)
+- Clean and scalable project structure
+- Ready to connect with a .NET REST API backend
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📂 Project Structure
+src/
+├── components/ # Reusable UI components
+├── hooks/ # Custom hooks (useAuth, etc.)
+├── pages/ # Pages (Login, Home, Tasks)
+├── router/ # Routing configuration
+├── services/ # Axios instance & interceptors
+├── types/ # TypeScript types & interfaces
+├── App.tsx
+└── main.tsx
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+
+---
+
+## 🔐 Authentication Flow
+
+1. User logs in from `/login`
+2. Backend returns a JWT token
+3. Token is stored in `localStorage`
+4. Axios interceptor attaches token to every request
+5. Protected routes validate authentication status
+
+---
+
+## 🛠️ Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or higher recommended)
+- npm or pnpm
+- Backend API running locally
+
+---
+
+### Installation
+
+```bash
+npm install
+
+Run the development server
+
+npm run dev
+
+The application will be available at:
+
+http://localhost:5173
+
+🔗 Backend Integration
+
+Default backend URL:
+
+http://localhost:5049
+
+
+Make sure the backend:
+
+Is running
+
+Has CORS enabled for http://localhost:5173
+
+Exposes authentication endpoints
+
+🌱 Environment Variables (optional)
+
+Create a .env file in the project root:
+
+VITE_API_URL=http://localhost:5049
+
+🧪 Future Improvements
+
+Refresh token support
+
+Role-based authorization
+
+Form validation
+
+UI/UX improvements
+
+Unit and integration tests
+
+👩‍💻 Author
+
+Vanessa Duarte
+
+Frontend Developer | Fullstack .NET & React
+
+📄 License
+
+This project is for educational and portfolio purposes.
