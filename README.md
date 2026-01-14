@@ -68,7 +68,7 @@ src/
 ```bash
 npm install
 
-Run the development server
+### Run the development server
 
 npm run dev
 
@@ -76,7 +76,8 @@ The application will be available at:
 
 http://localhost:5173
 
-🔗 Backend Integration
+
+## 🔗 Backend Integration
 
 Default backend URL:
 
@@ -85,11 +86,10 @@ http://localhost:5049
 
 Make sure the backend:
 
-Is running
+- Is running
+- Has CORS enabled for http://localhost:5173
+- Exposes authentication endpoints
 
-Has CORS enabled for http://localhost:5173
-
-Exposes authentication endpoints
 
 🌱 Environment Variables (optional)
 
@@ -97,24 +97,22 @@ Create a .env file in the project root:
 
 VITE_API_URL=http://localhost:5049
 
+
 🧪 Future Improvements
 
-Refresh token support
+- Refresh token support
+- Role-based authorization
+- Form validation
+- UI/UX improvements
+- Unit and integration tests
 
-Role-based authorization
 
-Form validation
+## 👩‍💻 Author
 
-UI/UX improvements
-
-Unit and integration tests
-
-👩‍💻 Author
-
-Vanessa Duarte
-
+Vanessa Duarte  
 Frontend Developer | Fullstack .NET & React
 
-📄 License
+
+## 📄 License
 
 This project is for educational and portfolio purposes.
